@@ -6,14 +6,19 @@
 //
 
 import UIKit
+import ParselyAnalytics
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var parsely: Parsely!
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        self.parsely = Parsely.sharedInstance
+            self.parsely.configure(siteId: "parselysupport.mystagingwebsite.com")
+        self.parsely.trackPageView(url: "http://parselysupport.mystagingwebsite.com/trojans-mccombs-to-challenge-polk-in-regular-season-home-finale/")
         return true
     }
 
